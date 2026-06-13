@@ -1,17 +1,34 @@
-"""Gmail Service — handles fetching and parsing emails via Gmail API."""
+import json
+
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+
+from app.config import settings
 
 
-class GmailService:
-    def __init__(self):
-        # TODO: Initialize with OAuth credentials
-        pass
+def get_gmail_service():
+    """
+    Create authenticated Gmail service.
+    """
 
-    async def fetch_emails(self, user_id: str, max_results: int = 20):
-        """Fetch recent emails from user's Gmail inbox."""
-        # TODO: Implement Gmail API call
-        return []
+    try:
+        with open(settings.TOKEN_FILE, "r") as token:
+            token_data = json.load(token)
 
-    async def get_email_by_id(self, user_id: str, email_id: str):
-        """Fetch a specific email by ID."""
-        # TODO: Implement single email fetch
-        return None
+        credentials = Credentials.from_authorized_user_info(
+            token_data,
+            settings.GMAIL_SCOPES
+        )
+
+        service = build(
+            "gmail",
+            "v1",
+            credentials=credentials
+        )
+
+        return service
+
+    except FileNotFoundError:
+        raise Exception(
+            "token.json not found. Please authenticate first."
+        )
