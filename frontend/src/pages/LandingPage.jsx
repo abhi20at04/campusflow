@@ -74,7 +74,7 @@ function Navbar() {
             <a href="#assistant" className="text-sm font-medium text-text-secondary hover:text-terracotta transition-colors">Cora</a>
           </div>
           <button
-            onClick={() => { window.location.href = 'http://localhost:8000/api/auth/login' }}
+            onClick={() => { window.location.href = '/login' }}
             className="px-5 py-2.5 text-sm font-semibold text-white bg-terracotta hover:bg-terracotta-dark rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-terracotta/20"
           >
             Get Started
@@ -91,7 +91,7 @@ function Navbar() {
           <a href="#overwhelm" className="block text-sm font-medium text-text-secondary py-2">Why</a>
           <a href="#features" className="block text-sm font-medium text-text-secondary py-2">Features</a>
           <a href="#assistant" className="block text-sm font-medium text-text-secondary py-2">Cora</a>
-          <button onClick={() => { window.location.href = 'http://localhost:8000/api/auth/login' }} className="w-full px-4 py-2.5 text-sm font-semibold text-white bg-terracotta rounded-xl mt-2">Get Started</button>
+          <button onClick={() => { window.location.href = '/login' }} className="w-full px-4 py-2.5 text-sm font-semibold text-white bg-terracotta rounded-xl mt-2">Get Started</button>
         </div>
       )}
     </nav>
@@ -147,7 +147,7 @@ function HeroSection() {
 
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
             <button
-              onClick={() => { window.location.href = 'http://localhost:8000/api/auth/login' }}
+              onClick={() => { window.location.href = '/login' }}
               className="px-8 py-4 bg-terracotta hover:bg-terracotta-dark text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-terracotta/25 flex items-center gap-2.5 text-[15px]"
             >
               <Mail size={18} />
@@ -389,7 +389,7 @@ function AssistantSection() {
             </motion.p>
             <motion.button
               variants={fadeLeft}
-              onClick={() => { window.location.href = 'http://localhost:8000/api/auth/login' }}
+              onClick={() => { window.location.href = '/login' }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="mt-10 px-8 py-4 bg-terracotta hover:bg-terracotta-dark text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-terracotta/25 inline-flex items-center gap-2.5 text-[15px]"

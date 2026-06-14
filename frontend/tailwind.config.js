@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,jsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['Manrope', 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+    },
     extend: {
       colors: {
         background: '#F7F5F2',
@@ -32,9 +35,6 @@ export default {
           secondary: '#6E6A64',
           muted: '#9B968F',
         },
-      },
-      fontFamily: {
-        sans: ['Manrope', 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       borderRadius: {
         sm: '8px',
